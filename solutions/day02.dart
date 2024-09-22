@@ -52,6 +52,7 @@ class Game {
 }
 
 class Round {
+  const Round({required this.grabs});
   factory Round.fromString(String segment) {
     final List<String> _grabs =
         segment.split(',').map((e) => e.trim()).toList();
@@ -59,7 +60,6 @@ class Round {
 
     return Round(grabs: _parsedGrabs);
   }
-  const Round({required this.grabs});
   final List<Grab> grabs;
 
   List<Grab> get red =>
